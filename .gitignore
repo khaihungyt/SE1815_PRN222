@@ -1,0 +1,76 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+out/
+bin/
+obj/
+
+# Visual Studio related
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Packages
+*.nupkg
+*.snupkg
+*.pdb
+*.mdb
+*.cache
+*.log
+
+# Tooling
+*.vsconfig
+.idea/
+.vscode/
+
+# Resharper related
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# JetBrains Rider
+.idea/
+.idea/*
+
+# Localization
+*.resources
+*.resx
+
+# Generated files
+*.g.cs
+*.g.i.cs
+*.Designer.cs
+*.dll
+*.exe
+*.log
+*.config
+
+# Dependencies
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment and configuration
+.env
+.env.*
+
+# Secrets and sensitive files
+secrets.json
+appsettings*.json
+appsettings.*.json
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
