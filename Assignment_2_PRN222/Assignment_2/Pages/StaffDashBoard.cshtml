@@ -1,0 +1,25 @@
+﻿@page
+@model Assignment_2.Pages.StaffDashBoardModel
+@{
+    ViewData["Title"] = "Staff Dashboard";
+}
+
+<h2>Staff Dashboard</h2>
+
+<div class="list-group">
+    <a href="@Url.Page("/Category/Index")" class="list-group-item list-group-item-action">
+        Manage Categories
+    </a>
+
+    <a asp-area ="" asp-page="ManageArticles" class="list-group-item list-group-item-action">
+        Manage News Articles
+    </a>
+
+    <a href="@Url.Page("/Profiles/Edit")" class="list-group-item list-group-item-action">
+        Manage Your Profile
+    </a>
+
+    <a  asp-page="ViewHistory" class="list-group-item list-group-item-action">
+        View Your News History
+    </a>
+</div>

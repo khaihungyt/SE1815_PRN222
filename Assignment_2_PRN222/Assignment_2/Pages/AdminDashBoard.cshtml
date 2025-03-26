@@ -1,0 +1,19 @@
+﻿@page
+@model Assignment_2.Pages.AdminDashBoardModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h2>Admin Dashboard</h2>
+
+<div class="list-group">
+
+    <a asp-area="" asp-page="Repost" class="list-group-item list-group-item-action">
+        Manage Report
+    </a>
+
+    <a href="@Url.Page("/Profiles/AdminEdit")" class="list-group-item list-group-item-action">
+        Manage Your Profile
+    </a>
+</div>
+

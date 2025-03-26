@@ -1,0 +1,43 @@
+﻿@page
+@model IndexModel;
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>NewsArticleID</th>
+                <th>NewsTitle</th>
+                <th>Headline</th>
+                <th>CreatedDate</th>
+                <th>NewsContent</th>
+                <th>NewsSource</th>
+                <th>CategoryID</th>
+                <th>NewsStatus</th>
+                <th>CreatedByID</th>
+                <th>UpdatedByID</th>
+                <th>ModifiedDate</th>
+            </tr>
+        </thead>
+        <tbody>
+           @foreach (var article in Model.ListArticle){
+            <tr>
+                <td>@article.NewsArticleId</td>
+                <td>@article.NewsTitle</td>
+                <td>@article.Headline</td>
+                <td>@article.CreatedDate</td>
+                <td>@article.NewsContent</td>
+                <td>@article.NewsSource</td>
+                <td>@article.Category.CategoryName</td>
+                <td>@article.NewsStatus</td>
+                <td>@article.CreatedById</td>
+                <td>@article.UpdatedById</td>
+                <td>@article.ModifiedDate</td>
+            </tr>
+           }
+        </tbody>
+    </table>
+
+</div>

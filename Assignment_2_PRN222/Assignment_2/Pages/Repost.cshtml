@@ -1,0 +1,50 @@
+﻿@page
+@model Assignment_2.Pages.RepostModel
+@{
+    ViewData["Title"] = "News Article Report";
+}
+
+<h1>News Article Report</h1>
+
+<form method="get">
+    <label for="StartDate">Start Date:</label>
+    <input type="date" id="StartDate" name="StartDate" value="@Model.StartDate?.ToString("yyyy-MM-dd")" />
+
+    <label for="EndDate">End Date:</label>
+    <input type="date" id="EndDate" name="EndDate" value="@Model.EndDate?.ToString("yyyy-MM-dd")" />
+
+    <button type="submit" class="btn btn-primary">Filter</button>
+</form>
+
+@if (Model.NewsArticles.Any())
+{
+    <table class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Headline</th>
+                <th>Created Date</th>
+                <th>Category</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var article in Model.NewsArticles)
+            {
+                <tr>
+                    <td>@article.NewsArticleId</td>
+                    <td>@article.NewsTitle</td>
+                    <td>@article.Headline</td>
+                    <td>@article.CreatedDate?.ToString("yyyy-MM-dd")</td>
+                    <td>@article.Category?.CategoryName</td>
+                    <td>@(article.NewsStatus == true ? "Active" : "Inactive")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No articles found within the selected period.</p>
+}

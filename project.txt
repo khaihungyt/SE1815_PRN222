@@ -1,0 +1,16 @@
+admin tạo lớp 
+Admin tạo tk giáo viên 
+tạo giáo viên, tạo thư mục 
+tạo môn
+tạo lớp gán giáo viên
+giáo viên đưa bài tập 
+sv đưa bài 
+giáo viên comment 
+
+nhắn lại 
+
+mỗi bài sinh viên đưa lên có comment bên dưới bởi giáo viên, 
+
+
+
+

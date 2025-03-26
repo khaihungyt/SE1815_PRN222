@@ -1,14 +1,24 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using PRN222_Assignment01.Models;
 
 namespace PRN222_Assignment01.Controllers
 {
     public class LecturerController : Controller
     {
+        //private readonly FunewsManagementContext context;
+        //public LecturerController(FunewsManagementContext context) => this.context = context;
+        private FunewsManagementContext context = new FunewsManagementContext();
         // GET: LecturerController
         public ActionResult Index()
         {
-            return View();
+           var model = context.NewsArticles.Include(n => n.Category).Include(n => n.CreatedBy).Include(n => n.Tags).Where(c => c.NewsStatus== true). ToList();
+            return View(model);
+        }
+        public ActionResult BackToLogin()
+        {
+            return RedirectToAction("Login", "Account");
         }
 
         // GET: LecturerController/Details/5

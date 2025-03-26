@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<PRN222_Assignment01.Models.NewsArticle>
+
 @{
     Layout = null;
 }
@@ -11,6 +12,91 @@
     <title>Index</title>
 </head>
 <body>
-    <div>day la trang lecturer</div>
+    <p>
+        <a asp-action="BackToLogin">BackToLogin</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NewsTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Headline)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NewsContent)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NewsSource)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NewsStatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UpdatedById)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ModifiedDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tags)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NewsTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Headline)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NewsContent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NewsSource)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NewsStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UpdatedById)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModifiedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedBy.AccountName)
+                    </td>
+                    <td>
+                        <select id="tag" name="tag">
+                        @foreach (var tag in item.Tags){
+                                <option value="@tag.TagId">@tag.TagName</option>
+                        }
+                        </select>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </body>
 </html>

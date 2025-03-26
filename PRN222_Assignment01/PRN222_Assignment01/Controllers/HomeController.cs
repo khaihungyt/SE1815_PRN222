@@ -7,7 +7,7 @@ namespace PRN222_Assignment01.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+        private FunewsManagementContext context = new FunewsManagementContext();
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -15,6 +15,7 @@ namespace PRN222_Assignment01.Controllers
 
         public IActionResult Index()
         {
+            
             return View();
         }
 
